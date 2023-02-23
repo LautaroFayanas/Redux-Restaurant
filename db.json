@@ -24,51 +24,6 @@
       "nombre": "Jugo de Fresa",
       "precio": "200",
       "id": 5
-    },
-    {
-      "nombre": "Mateca",
-      "precio": 250,
-      "id": 6
-    },
-    {
-      "nombre": "Lautaro",
-      "precio": 123,
-      "id": 7
-    },
-    {
-      "nombre": "123",
-      "precio": 123,
-      "id": 8
-    },
-    {
-      "nombre": "123",
-      "precio": 123,
-      "id": 9
-    },
-    {
-      "nombre": "123",
-      "precio": 123,
-      "id": 10
-    },
-    {
-      "nombre": "123",
-      "precio": 123,
-      "id": 11
-    },
-    {
-      "nombre": "manteca",
-      "precio": 12,
-      "id": 12
-    },
-    {
-      "nombre": "123",
-      "precio": 123,
-      "id": 13
-    },
-    {
-      "nombre": "Lautaro",
-      "precio": 23,
-      "id": 14
     }
   ]
 }
