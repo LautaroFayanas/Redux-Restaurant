@@ -1,7 +1,15 @@
-import React from 'react'
+import { useDispatch, useSelector } from "react-redux"
 
 export const EditarProducto = () => {
-  return (
+
+    // Producto a editar
+    const producto = useSelector(state => state.producto.productoeditar)
+    
+    if(!producto) return null;
+
+    const { nombre , precio , id } = producto
+
+    return (
     <div className='row justify-content-center'>
         <div className='col-md-8'>
             <div className='card'>
@@ -20,6 +28,7 @@ export const EditarProducto = () => {
                                 placeholder='Nombre Producto'
                                 type='text'
                                 name='nombre'
+                                value={nombre}
                                  />
                             </div>
 
@@ -32,6 +41,7 @@ export const EditarProducto = () => {
                                 placeholder='Precio Producto'
                                 type='number'
                                 name='precio'
+                                value={precio}
                                  />
                             </div>
 
