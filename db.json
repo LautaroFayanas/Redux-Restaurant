@@ -1,14 +1,39 @@
 {
   "productos": [
     {
-      "nombre": "jugo de banana",
-      "precio": 400,
-      "id": 6
+      "nombre": "Jugo de pera",
+      "precio": "450",
+      "id": 10
     },
     {
-      "nombre": "papas",
-      "precio": 1,
-      "id": 9
+      "nombre": "vodka",
+      "precio": 50,
+      "id": 11
+    },
+    {
+      "nombre": "GYN TONIC",
+      "precio": 560,
+      "id": 12
+    },
+    {
+      "nombre": "GYN Frutilla",
+      "precio": 600,
+      "id": 13
+    },
+    {
+      "nombre": "Comida",
+      "precio": 600,
+      "id": 14
+    },
+    {
+      "nombre": "Lautaro",
+      "precio": 99,
+      "id": 15
+    },
+    {
+      "nombre": "Lautaro",
+      "precio": 23,
+      "id": 16
     }
   ]
 }

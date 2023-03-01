@@ -1,13 +1,47 @@
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux"
+import { useNavigate } from "react-router-dom";
+import { editarProductoAction } from "../action/productoAction";
+
+
 
 export const EditarProducto = () => {
 
-    // Producto a editar
-    const producto = useSelector(state => state.producto.productoeditar)
-    
-    if(!producto) return null;
+    const navigate = useNavigate()
+    const dispatch = useDispatch(); 
 
-    const { nombre , precio , id } = producto
+    // Nuevo State de Producto
+    const [ producto , guardarProducto ] = useState({
+        nombre: '',
+        precio: ''
+    })
+
+    // Producto a editar
+    const productoeditar = useSelector(state => state.producto.productoeditar)
+
+    // Llenar el STATE automaticamente 
+    useEffect(() => {
+      guardarProducto(productoeditar)
+    }, [productoeditar]);
+
+    // Leer los datos del formulario
+    const onChangeFormulario = e => {
+        guardarProducto({
+            ...producto,
+            [e.target.name]: e.target.value
+        })
+    }
+    
+
+    const { nombre , precio  } = producto;
+
+    const submitEditarProducto = e => {
+        e.preventDefault();
+
+       dispatch(editarProductoAction(producto));
+
+       navigate('/')
+    }
 
     return (
     <div className='row justify-content-center'>
@@ -18,7 +52,9 @@ export const EditarProducto = () => {
                             Editar Producto
                         </h2>
 
-                        <form>
+                        <form
+                            onSubmit={submitEditarProducto}
+                        >
                             <div className='form-group'>
                                 <label>
                                     Nombre Producto
@@ -29,6 +65,7 @@ export const EditarProducto = () => {
                                 type='text'
                                 name='nombre'
                                 value={nombre}
+                                onChange={onChangeFormulario}
                                  />
                             </div>
 
@@ -42,6 +79,7 @@ export const EditarProducto = () => {
                                 type='number'
                                 name='precio'
                                 value={precio}
+                                onChange={onChangeFormulario}
                                  />
                             </div>
 
